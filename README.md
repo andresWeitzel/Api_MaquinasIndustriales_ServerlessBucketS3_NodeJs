@@ -605,7 +605,7 @@
            event: s3:*
   ```
 
-* Creamos dicha lambda `bucket.s3.js` dentro de `src/lambdas/`
+* Creamos dicha lambda `bucketS3.js` dentro de `src/lambdas/`
 
    ``` js
       //=================== METADATA BUCKET =================
