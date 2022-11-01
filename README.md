@@ -118,6 +118,7 @@
 * Agregamos el plugin instalado de serverless-offline al archivo `serverless.yml`
 * Configuramos los diversos parámetros necesarios del provider
 * Vamos a trabajar todas las lambdas dentro del directorio `src/lambdas/` por asuntos de modularización de código
+* Renombramos la lambda `handler.js` para `hello.js`
 * Configuramos tipo de método y path a través de httpApi.
 * Configuramos el puerto http 
 * Archivo serveless.yml..
@@ -147,7 +148,7 @@
 
       functions:
         hello:
-          handler: src/lambdas/hello
+          handler: src/lambdas/hello.msg
           events:
             - httpApi:
                 method: GET
@@ -155,13 +156,13 @@
 
 
   ```
-* La lambda `handler.js` la movemos al directorio ya mencionado `src/lambdas/`
-* Archivo handler.js..
+* La lambda `hello.js` la movemos al directorio ya mencionado `src/lambdas/`
+* Archivo Lambda hello.js..
     
     ```js
      'use strict';
 
-      module.exports.hello = async (event) => {
+      module.exports.msg = async (event) => {
         return {
           statusCode: 200,
           body: JSON.stringify(
@@ -221,7 +222,7 @@
 
       functions:
         hello:
-          handler:  src/lambdas/hello
+          handler:  src/lambdas/hello.msg
           events:
             - httpApi:
                 method: GET
@@ -408,7 +409,7 @@
 </br>
 
 ### 3.0) Ejecución de Serverless Local
-* Por defecto tenemos configurado una lambda llamada handler a través de su función .hello
+* Por defecto tenemos configurado una lambda llamada hello a través de su función .msg
 * Comprobamos la config generada.
 * Además tenemos configurada la seguridad y manejo de responses por parte de la Api Gateway, esta nos provera un token de acceso (x-api-key) para el acceso a cada lambda.
 * Levantamos serverless con el comando `sls offline start` o `serverless offline start`
@@ -429,7 +430,7 @@
     Server ready: http://localhost:4000
   ``` 
 * Abrimos alguna herramienta para generar peticiones http (ej: Postman) y generamos una request al endpoint generado junto con la api key de nuestro gateway  
-* Seleccionamos método `GET`, luego escribimos el endpoint `http://localhost:3000/hello`, seguidamente pestaña `Headers` en `KEY` colocamos `x-api-key` y en `VALUE` colocamos el token generado `d41d8cd98f00b204e9800998ecf8427e`.
+* Seleccionamos método `GET`, luego escribimos el endpoint `http://localhost:4000/hello`, seguidamente pestaña `Headers` en `KEY` colocamos `x-api-key` y en `VALUE` colocamos el token generado `d41d8cd98f00b204e9800998ecf8427e`.
 * Procedemos a ejecutar la request y podemos comprobar la metadata de la lambda en la consola de postman
 * También obtenemos la respuesta por consola..
   
@@ -594,6 +595,16 @@
   ```
 * Ejecutar serverless, es recomendable luego de cada instalación y agregado de plugin reiniciar el IDE para que los cambios se produzcan de forma correcta.
 * Seguidamente vamos a declarar una lambda de tipo bucket que nos gestione toda la metadata para las acciones que se realice en tiempo de ejecución.
+* Definimos dicha lambda en el archivo `serverless.yml`
+
+  ``` YML
+     bucketS3:
+       handler : src/bucketS3.config
+       events:
+         - s3: local-bucket
+           event: s3:*
+  ```
+
 * Creamos dicha lambda `bucket.s3.js` dentro de `src/lambdas/`
 
    ``` js
