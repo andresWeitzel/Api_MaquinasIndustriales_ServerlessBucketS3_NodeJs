@@ -595,14 +595,25 @@
   ```
 * Ejecutar serverless, es recomendable luego de cada instalación y agregado de plugin reiniciar el IDE para que los cambios se produzcan de forma correcta.
 * Seguidamente vamos a declarar una lambda de tipo bucket que nos gestione toda la metadata para las acciones que se realice en tiempo de ejecución.
-* Definimos dicha lambda en el archivo `serverless.yml`
+* Definimos el path de dicha lambda en el archivo `serverless.yml`
 
   ``` YML
+  functions:
      bucketS3:
        handler : src/bucketS3.config
        events:
          - s3: local-bucket
            event: s3:*
+  ```
+* Definimos la configuración y nombre de dicho bucket 
+
+  ``` YML
+resources:
+  Resources:
+    Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: FILE_UPLOAD_BUCKET
   ```
 
 * Creamos dicha lambda `bucketS3.js` dentro de `src/lambdas/`
