@@ -96,11 +96,12 @@
 
 ### 1.0) Instalación y Configuración de Serverless Local
 * Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
-* Seguidamente creamos toda la config de serverless para nuestro proyecto(en mi caso el nombre del proyecto es `project-dynamodb`) `serverless create --template aws-nodejs --path project-dynamodb && cd project-dynamodb`
+* Seguidamente creamos toda la config de serverless para nuestro proyecto(en mi caso el nombre del proyecto es `api-maquinas-industriales` ) `serverless create --template aws-nodejs --path api-maquinas-industriales && cd api-maquinas-industriales`
 * Luego inicializamos el package.json en el proyecto `npm init -y`.
 * Instalamos el plugin serverless-offline `npm i serverless-offline`
 * Comprobamos versión `serverless --version`
 * Salida Esperada ..
+
    ``` bash
     Framework Core: 3.23.0
     Plugin: 6.2.2
@@ -112,34 +113,38 @@
 * Configuramos tipo de método y path a través de httpApi.
 * Configuramos el puerto http 
 * Archivo serveless.yml..
+
   ``` yml
   
-   service: project-dynamodb
 
-   frameworkVersion: '3'
+      service: api-maquinas-industriales
 
-   provider:
-     name: aws
-     runtime: nodejs14.x
-     stage: offline
-     region : us-west-1
-     memorySize: 512
-     timeout : 20
+      frameworkVersion: '3'
 
-   plugins:
-     - serverless-offline 
+      provider:
+        name: aws
+        runtime: nodejs14.x
+        stage: offline
+        region : us-west-1
+        memorySize: 512
+        timeout : 20
 
-   custom: 
-     serverless-offline:
-       httpPort: 4000   
+      plugins:
+        - serverless-offline 
 
-   functions:
-     hello:
-       handler: handler.hello
-       events:
-         - httpApi:
-             method: GET
-             path: hello
+      custom: 
+        serverless-offline:
+          httpPort: 4000 
+
+
+      functions:
+        hello:
+          handler: handler.hello
+          events:
+            - httpApi:
+                method: GET
+                path: hello
+
 
   ``` 
    
@@ -163,33 +168,33 @@
 
      ``` yml
   
-   service: project-dynamodb
+      service: api-maquinas-industriales
 
-   frameworkVersion: "3"
+      frameworkVersion: '3'
 
-   provider:
-     name: aws
-     runtime: nodejs14.x
-     stage: offline
-     region : us-west-1
-     memorySize: 512
-     timeout : 10
+      provider:
+        name: aws
+        runtime: nodejs14.x
+        stage: offline
+        region : us-west-1
+        memorySize: 512
+        timeout : 20
 
-   plugins:
-     - serverless-offline
+      plugins:
+        - serverless-offline 
 
-   custom:
-     serverless-offline:
-       httpPort: 4000
+      custom: 
+        serverless-offline:
+          httpPort: 4000 
 
-   functions:
-     hello:
-       handler: handler.hello
-       events:
-         - httpApi:
-             method: GET
-             path: hello
-             private: true
+
+      functions:
+        hello:
+          handler: handler.hello
+          events:
+            - httpApi:
+                method: GET
+                path: hello
 
    resources:
      Resources:
