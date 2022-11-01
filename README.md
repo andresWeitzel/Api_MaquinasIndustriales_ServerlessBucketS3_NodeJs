@@ -82,6 +82,10 @@
 #### Sección 2) SSM e IAM
    
    - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
+
+#### Sección 3) Amazon Bucket S3
+   
+   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
    
    
   
@@ -538,8 +542,25 @@
           }
       }
     ```
-  
-  
+
+</br>
+
+## Sección 3) Amazon Bucket S3
+
+
+#### Arquitectura Lambda Function y Api gateway .
+ ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/lambdasApiGateway.png)
+ 
+</br>
+
+
+### 5.0) Instalación y Configuración de Amazon Bucket S3
+* Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
+
+
+
+
+
   
   
   
