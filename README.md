@@ -492,7 +492,8 @@
      serverless-offline:
        httpPort: 4000  
   ```
-* Por último utilizamos dicha variable en la lambda declarada, para invocar una variable de entorno utilizamos `process.env.variable`  
+* Por último utilizamos dicha variable en la lambda declarada, para invocar una variable de entorno utilizamos `process.env.variable`.
+* Ejecutar serverless, es recomendable luego de cada instalación y agregado de plugin reiniciar el IDE para que los cambios se produzcan de forma correcta.
  
     ```js
       'use strict';
@@ -592,7 +593,19 @@
      - serverless-offline 
   ```
 * Ejecutar serverless, es recomendable luego de cada instalación y agregado de plugin reiniciar el IDE para que los cambios se produzcan de forma correcta.
-* Seguidamente vamos a declarar una lambda de tipo bucket que nos gestione toda la metadata para las acciones que realice.
+* Seguidamente vamos a declarar una lambda de tipo bucket que nos gestione toda la metadata para las acciones que se realice en tiempo de ejecución.
+* Creamos dicha lambda `bucket.s3.js` dentro de `src/lambdas/`
+
+   ``` js
+      //=================== METADATA BUCKET =================
+   module.exports.config = (event, context) => {
+       console.log(JSON.stringify(event));
+       console.log(JSON.stringify(context));
+       console.log(JSON.stringify(process.env));
+     };
+     //=================== FIN METADATA BUCKET =================
+   
+   ```
 
 
 </br>
