@@ -89,7 +89,7 @@
 
 
 #### Arquitectura Lambda Function y Api gateway .
- ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/lambdasApiGateway.png)
+ ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/lambdasApiGateway.png)
  
 </br>
 
@@ -415,8 +415,8 @@
 
 
 #### Arquitectura Lambda Function y SSM .
- ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/ssmLambdas.png)
- 
+ ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/ssmLambdas.png)
+
 </br>
 
 
