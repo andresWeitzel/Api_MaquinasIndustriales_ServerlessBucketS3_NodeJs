@@ -548,8 +548,10 @@
 ## Sección 3) Amazon Bucket S3
 
 
-#### Arquitectura Lambda Function y Api gateway .
- ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/lambdasApiGateway.png)
+#### Arquitectura Lambda Function, Api gateway y Bucket S3.
+ ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/bucketLambdas.png)
+#### Registro de Objectos Json Bucket S3.
+ ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/bucketObject.png) 
  
 </br>
 
