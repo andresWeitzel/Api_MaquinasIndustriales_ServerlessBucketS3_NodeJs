@@ -15,7 +15,8 @@
 | Serverless Framework Core | 3.23.0 | Core Servicios AWS |
 | Serverless Plugin | 6.2.2  | Librerías para la Definición Modular |
 | Systems Manager Parameter Store (SSM) | 3.0 | Manejo de Variables de Entorno |
-| Amazon Api Gateway | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api | 
+| Amazon Api Gateway | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api |
+| Amazon S3 Bucket | 3.0 | Contenedor de Objetos |
 | NodeJS | 14.18.1  | Librería JS |
 | VSC | 1.72.2  | IDE |
 | CMD | 10 | Símbolo del Sistema para linea de comandos | 
@@ -31,6 +32,7 @@
 | -------------  | ------------- |
 | Serverless Framework V3 |  https://www.serverless.com//blog/serverless-framework-v3-is-live |
 | Amazon Api Gateway |  https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
+| Amazon Bucket S3 | https://aws.amazon.com/es/s3/ |
 | Systems Manager Parameter Store (SSM) | https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html |
 | NodeJs |  https://nodejs.org/en/ |
 | VSC |  https://code.visualstudio.com/docs |
@@ -44,6 +46,7 @@
 | -------------  | ------------- |
 | serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
 | serverless-offline-ssm |  https://www.npmjs.com/package/serverless-offline-ssm |
+| serverless-s3-local |  https://www.serverless.com/plugins/serverless-s3-local |
 
 
 </br>
