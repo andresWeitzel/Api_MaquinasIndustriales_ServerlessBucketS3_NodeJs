@@ -9,14 +9,22 @@ provider:
   region: us-west-1
   memorySize: 512
   timeout: 20
+  environment: ${file(serverless.env.yml)}
 
 plugins:
-- serverless-offline
+  - serverless-offline-ssm
+  - serverless-offline
 
 custom:
+  serverless-offline-ssm:
+    stages:
+      - offline
+    ssm:
+      '/hello_test': 'HELLO SSM'
   serverless-offline:
-    httpPort: 4000
+      httpPort: 4000
 
+      
 functions:
   hello:
     handler: handler.hello
@@ -24,6 +32,7 @@ functions:
       - httpApi:
           method: GET
           path: hello
+          private: true
 
 resources:
   Resources:

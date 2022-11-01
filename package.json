@@ -9,7 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "serverless-offline": "^11.2.2"
+  "devDependencies": {
+    "serverless-offline": "^11.2.3",
+    "serverless-offline-ssm": "^6.2.0"
   }
 }
