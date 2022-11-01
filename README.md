@@ -117,6 +117,7 @@
    ```
 * Agregamos el plugin instalado de serverless-offline al archivo `serverless.yml`
 * Configuramos los diversos parámetros necesarios del provider
+* Vamos a trabajar todas las lambdas dentro del directorio `src/lambdas/` por asuntos de modularización de código
 * Configuramos tipo de método y path a través de httpApi.
 * Configuramos el puerto http 
 * Archivo serveless.yml..
@@ -146,19 +147,42 @@
 
       functions:
         hello:
-          handler: handler.hello
+          handler: src/lambdas/hello
           events:
             - httpApi:
                 method: GET
                 path: hello
 
 
-  ``` 
+  ```
+* La lambda `handler.js` la movemos al directorio ya mencionado `src/lambdas/`
+* Archivo handler.js..
+    
+    ```js
+     'use strict';
+
+      module.exports.hello = async (event) => {
+        return {
+          statusCode: 200,
+          body: JSON.stringify(
+            {
+              message: 'HELLO',
+              input: event,
+            },
+            null,
+            2
+          ),
+        };
+
+      };
+
+    
+    ```
    
   
 </br>   
 
-* Guía Oficial : https://www.serverless.com//blog/serverless-framework-v3-is-live)   
+* Guía Oficial : https://www.serverless.com//blog/serverless-framework-v3-is-live   
 * Guía Recomendada : https://medium.com/@patricio.aranguiz/serverless-offline-aws-lambda-api-gateway-15a4dfdfbc16
 * Config Parámetros Provider : https://www.tutorialspoint.com/serverless/serverless_regions_memory_size_timeouts.htm
 
@@ -197,7 +221,7 @@
 
       functions:
         hello:
-          handler: handler.hello
+          handler:  src/lambdas/hello
           events:
             - httpApi:
                 method: GET
@@ -393,14 +417,14 @@
      ``` bash
      Starting Offline at stage dev (us-east-1)
 
-   Offline [http for lambda] listening on http://localhost:3002
+     Offline [http for lambda] listening on http://localhost:3002
    Function names exposed for local invocation by aws-sdk:
-              * hello: project-dynamodb-dev-hello
+              * hello: api-maquinas-industriales-offline-hello
    Remember to use 'x-api-key' on the request headers.
    Key with token: 'd41d8cd98f00b204e9800998ecf8427e'           
               
-    GET | http://localhost:3000/hello   
-    POST | http://localhost:3000/2015-03-31/functions/hello/invocations 
+    GET | http://localhost:4000/hello   
+    POST | http://localhost:4000/2015-03-31/functions/hello/invocations 
     
     Server ready: http://localhost:4000
   ``` 
@@ -567,7 +591,8 @@
      - serverless-offline-ssm
      - serverless-offline 
   ```
-* 
+* Ejecutar serverless, es recomendable luego de cada instalación y agregado de plugin reiniciar el IDE para que los cambios se produzcan de forma correcta.
+* Seguidamente vamos a declarar una lambda de tipo bucket que nos gestione toda la metadata para las acciones que realice.
 
 
 </br>
