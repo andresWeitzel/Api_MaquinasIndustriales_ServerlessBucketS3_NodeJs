@@ -195,6 +195,7 @@
             - httpApi:
                 method: GET
                 path: hello
+                private: true
 
    resources:
      Resources:
