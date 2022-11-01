@@ -28,12 +28,17 @@ custom:
       
 functions:
   hello:
-    handler: handler.hello
+    handler: src/lambdas/hello.msg
     events:
       - httpApi:
           method: GET
           path: hello
           private: true
+  bucketS3:
+    handler : src/bucketS3.config
+    events:
+      - s3: local-bucket
+        event: s3:*
 
 resources:
   Resources:
