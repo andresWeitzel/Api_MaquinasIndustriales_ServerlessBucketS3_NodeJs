@@ -600,7 +600,7 @@
   ``` YML
   functions:
      bucketS3:
-       handler : src/bucketS3.config
+       handler : src/lambdas/bucketS3.config
        events:
          - s3: local-bucket
            event: s3:*
@@ -608,12 +608,12 @@
 * Definimos la configuración y nombre de dicho bucket 
 
   ``` YML
-resources:
-  Resources:
-    Bucket:
-      Type: AWS::S3::Bucket
-      Properties:
-        BucketName: FILE_UPLOAD_BUCKET
+      resources:
+        Resources:
+          Bucket:
+            Type: AWS::S3::Bucket
+            Properties:
+              BucketName: FILE_UPLOAD_BUCKET
   ```
 
 * Creamos dicha lambda `bucketS3.js` dentro de `src/lambdas/`
@@ -628,6 +628,8 @@ resources:
      //=================== FIN METADATA BUCKET =================
    
    ```
+* Ejecutamos serverless y verificamos que no surjan errores.   
+   
 
 
 </br>
