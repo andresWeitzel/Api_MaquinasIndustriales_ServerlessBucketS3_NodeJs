@@ -557,8 +557,17 @@
 
 
 ### 5.0) Instalación y Configuración de Amazon Bucket S3
-* Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
+* Amazon Simple Storage Service (Amazon S3) es un servicio de almacenamiento de objetos que ofrece escalabilidad, disponibilidad de datos, seguridad y rendimiento líderes en el sector. 
+* Vamos a instalar el plugin en local `npm install serverless-s3-local --save-dev`
+* Agregamos el mismo en la sección plugin del .yml, quedando...
 
+  ``` YML
+   plugins:
+     - serverless-s3-local
+     - serverless-offline-ssm
+     - serverless-offline 
+  ```
+* 
 
 
 
