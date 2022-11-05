@@ -72,6 +72,7 @@
 | -------------  | 
 | Prettier - Code formatter |
 | YAML - Autoformatter .yml (alt+shift+f) |
+| YAML-fm Linter |
 | DotENV |
 
 
@@ -81,7 +82,7 @@
 
 ## Documentación y Guía del Proyecto Inicial/Referencia
 #### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
-#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender cada servicio de aws. Recomiendo tener en consideración dicho proceso.
+#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
 
 
 </br>
@@ -697,10 +698,22 @@
      module.exports = { put };  
    
    ```
-* Crearemos
 
+* Seguidamente configuramos una lambda, es necesario su definición en el serverless.yml
 
-
+   ``` yml
+    functions:
+      createMachine:
+        handler: src/lambdas/createMachine.post
+        description: STORING INDUSTRIAL MACHINES IN BUCKET S3.
+        events:
+          - httpApi:
+              method: POST
+              path: /dev/machine/
+              private: true
+   ```
+   
+* Crearemos la lambda configurada dentro de `src/lambdas/` para que ejecute dicho proceso de escritura del bucket.  
 
 
 
