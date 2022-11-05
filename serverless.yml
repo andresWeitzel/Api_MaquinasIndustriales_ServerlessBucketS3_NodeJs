@@ -39,7 +39,14 @@ functions:
           method: GET
           path: hello
           private: true
-
+  createMachine:
+    handler: src/lambdas/createMachine.post
+    description: STORING INDUSTRIAL MACHINES IN BUCKET S3.
+    events:
+      - httpApi:
+          method: POST
+          path: /dev/machine/
+          private: true
 
 resources:
   Resources:
