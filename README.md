@@ -6,15 +6,13 @@
 
 ### Ejecución del Proyecto
 * Crear un entorno de trabajo a través de algún IDE
-* Clonar el Proyecto 
-  * `git clone https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs)`
+* Clonar el Proyecto ( `git clone https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs)` )
 * Dentro del directorio instalar todos los plugins implementados
   * `npm install -g serverless`
   * `npm i serverless-offline`
   * `npm install serverless-offline serverless-offline-ssm --save-dev`
   * `npm install serverless-s3-local --save-dev`
-* Levantar Serverless en Local  
-  * `sls offline start`
+* Levantar Serverless en Local ( `sls offline start` )
 * Comprobar respuestas de los endpoints generados a través de alguna herramienta Cliente Http (Ej:Postman)
 
 </br>
