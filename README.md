@@ -13,6 +13,9 @@
   * `npm i serverless-offline`
   * `npm install serverless-offline serverless-offline-ssm --save-dev`
   * `npm install serverless-s3-local --save-dev`
+* Levantar Serverless en Local  
+  * `sls offline start`
+* Comprobar respuestas de los endpoints generados a través de alguna herramienta Cliente Http (Ej:Postman)
 
 </br>
 
@@ -31,6 +34,7 @@
 | Amazon S3 Bucket | 3.0 | Contenedor de Objetos |
 | NodeJS | 14.18.1  | Librería JS |
 | VSC | 1.72.2  | IDE |
+| Postman| 10.11  | Cliente Http |
 | CMD | 10 | Símbolo del Sistema para linea de comandos | 
 | Git | 2.29.1  | Control de Versiones |
 
@@ -48,6 +52,7 @@
 | Systems Manager Parameter Store (SSM) | https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html |
 | NodeJs |  https://nodejs.org/en/ |
 | VSC |  https://code.visualstudio.com/docs |
+| Postman |  https://learning.postman.com/docs/publishing-your-api/documenting-your-api/ |
 | Git   |  https://git-scm.com/docs |
 
 </br>
