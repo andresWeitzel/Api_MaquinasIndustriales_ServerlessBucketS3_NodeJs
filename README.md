@@ -4,6 +4,17 @@
 
 </br>
 
+### Replicación del Proyecto
+* Crear un entorno de trabajo a través de algún IDE
+* Clonar el Proyecto ( git clone https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs)
+* Dentro del directorio instalar todos los plugins implementados
+   * npm install -g serverless
+   * npm i serverless-offline
+   * npm install serverless-offline serverless-offline-ssm --save-dev
+   * npm install serverless-s3-local --save-dev
+
+</br>
+
 
 
 
