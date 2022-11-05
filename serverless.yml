@@ -27,6 +27,11 @@ custom:
 
       
 functions:
+  bucketS3:
+    handler : src/bucketS3.config
+    events:
+      - s3: local-bucket
+        event: s3:*
   hello:
     handler: src/lambdas/hello.msg
     events:
@@ -34,14 +39,14 @@ functions:
           method: GET
           path: hello
           private: true
-  bucketS3:
-    handler : src/bucketS3.config
-    events:
-      - s3: local-bucket
-        event: s3:*
+
 
 resources:
   Resources:
+    Bucket:
+        Type: AWS::S3::Bucket
+        Properties:
+          BucketName: FILE_UPLOAD_BUCKET
     ApiGatewayRestApi:
       Type: AWS::ApiGateway::RestApi
       Properties:
