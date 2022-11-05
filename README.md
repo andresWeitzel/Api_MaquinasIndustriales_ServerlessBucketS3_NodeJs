@@ -102,6 +102,8 @@
    
    - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
    
+   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
+   
    
   
 
@@ -645,6 +647,63 @@
    ```
 * Ejecutamos serverless y verificamos que no surjan errores.   
    
+</br>
+
+
+### 6.0) Escritura de Objetos
+* Los objetos son las entidades de datos en sí, es decir, nuestros archivos. Un object almacena tanto los datos como los metadatos necesarios para S3. 
+* Para este ejemplo vamos a modulizar código y abstraernos de las lambdas con respecto a las operaciones de escritura y lectura para el bucket, por ende crearemos funciones que realicen esto.
+* Creamos un nuevo directorio `src/utils/bucket`.
+* Dentro del mismo el archivo `appendBucket.js`
+* Crearemos una función que espere como parámetro el tipo de objeto a almacenar y toda la lógica del bucket dentro de esta.
+* Para utilizar la funcionalidad de los buckets es necesario importar el skd de aws, de esta forma podremos instanciar un objeto del tipo S3Client. Para este objeto se le podrán pasar las credenciales necesarias para trabajar en local (S3ERVER) y declarar otros params 
+* Seguidamente utilizaremos el método send para indicar el nombre del bucket (`Bucket`) y su llave (`key`). Además de indicarle el objeto a almacenar (`Body`).
+
+   ``` js
+     //Imports
+     "use strict";
+     const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+
+
+     //======= APPEND BUCKET ===========
+     async function put(appendData) {
+       try {
+
+
+         const client = new S3Client({
+           forcePathStyle: true,
+           credentials: {
+             accessKeyId: "S3RVER", // This specific key is required when working offline
+             secretAccessKey: "S3RVER",
+           },
+           endpoint: "http://localhost:4569",
+         });
+
+         client.send(
+           new PutObjectCommand({
+             Bucket: "local-bucket",
+             Key: "bucketS3.json",
+             Body: await appendData,
+           })
+         );
+       } catch (error) {
+         console.log(error);
+       }
+     }
+     //======= END APPEND ===========
+
+     module.exports = { put };  
+   
+   ```
+
+
+
+
+
+
+
+
+
 
 
 </br>
