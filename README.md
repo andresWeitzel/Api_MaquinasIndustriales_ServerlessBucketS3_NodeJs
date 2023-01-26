@@ -22,6 +22,7 @@
 ### Sección 2) Proyecto Serverless desde cero 
  
  - [2.0) Instalación y Configuración de Serverless Local](#20-instalación-y-configuración-de-serverless-local-)
+ - [2.1) Configuración de Api Gateway](#21-configuración-de-api-gateway-)
 
 
 <br>
@@ -136,11 +137,18 @@
 
 ## Sección 2) Proyecto Serverless desde cero
 
-
 ### Arquitectura Lambda Function y Api gateway 
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+ 
  ![Index app](./doc/lambdasApiGateway.png)
  
 <br>
+
+</details>
 
 
 ### 2.0) Instalación y Configuración de Serverless Local [🔝](#índice-)
@@ -241,55 +249,14 @@
 </details>
 
 
+ 
+### 2.1) Configuración de Api Gateway [🔝](#índice-) 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Documentación y Guía del Proyecto Inicial/Referencia
-#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
-#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
-
-
-</br>
-
-### Indice.
-
-#### Sección 1) Serverless Local y Api Gateway
-   
-   - [1.0) Instalación y Configuración de Serverless Local](#10-instalación-y-configuración-de-serverless-local)
-  
-   - [2.0) Configuración de Api Gateway](#20-configuración-de-api-gateway)
-   
-   - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
-   
-#### Sección 2) SSM e IAM
-   
-   - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
-
-#### Sección 3) Amazon Bucket S3
-   
-   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
-   
-   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
-   
-   
-  
-
-### 2.0) Configuración de Api Gateway
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+ 
 * API Gateway gestiona todas las tareas relacionadas con la aceptación y el procesamiento de centenares de miles de llamadas simultáneas a la API. Estas tareas incluyen la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
 * No es necesario la instalación de ningún paquete adicional, este servicio viene incluido en la instalación principal de serverless.
 * Para cada lambda es necesario adicionar el parametro `private: true` dentro de `- httpApi` para que se aplique la restricción de acceso correctamente.
@@ -499,11 +466,63 @@
 
   ```
 
-</br>   
 
 * Código Base : https://gist.github.com/jonatassaraiva/4c33dd8225605c02318cd71a55b2335d
 
 
+<br>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Documentación y Guía del Proyecto Inicial/Referencia
+#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
+#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
+
+
+</br>
+
+### Indice.
+
+#### Sección 1) Serverless Local y Api Gateway
+   
+
+  
+   
+   - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
+   
+#### Sección 2) SSM e IAM
+   
+   - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
+
+#### Sección 3) Amazon Bucket S3
+   
+   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
+   
+   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
+   
+   
+  
 
 </br>
 
