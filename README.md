@@ -14,15 +14,15 @@
 ### Sección 1) Descripción, Tecnologías y Dependencias 
  
  - [1.0) Descripción del Proyecto.](#10-descripción-)
- - [1.1) Tecnologías.](#11-tecnologías-)
- - [1.2) Plugins.](#12-plugins-)
- - [1.3) Extensiones VSC.](#13-extensiones-vsc-)
- - [1.4) Ejecución del Proyecto.](#14-ejecución-del-proyecto-)
+ - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
+ - [1.2) Tecnologías.](#12-tecnologías-)
+ - [1.3) Plugins.](#13-plugins-)
+ - [1.4) Extensiones VSC.](#14-extensiones-vsc-)
  
-### Sección 2) s 
+### Sección 2) Creación Proyecto Serverless desde cero 
  
- - [2.0) EndPoints.](#endpoints-)
- - [2.1) Recursos y Servicios.](#recursos-y-servicios-)
+ - [2.0) Instalación y Configuración de Serverless Local](#20-instalación-y-configuración-de-serverless-local-)
+
 
 <br>
 
@@ -37,7 +37,7 @@
 ### 1.0) Descripción [🔝](#índice-) 
 
 <details>
- <summary></summary>
+  <summary>Ver</summary>
  
  <br>
 
@@ -48,73 +48,10 @@
 </details>
 
 
-### 1.1) Tecnologías [🔝](#índice-)
+### 1.1) Ejecución del Proyecto [🔝](#índice-)
 
 <details>
- <summary></summary>
- 
- <br>
-
-| **Tecnologías** | **Versión** | **Finalidad** |               
-| ------------- | ------------- | ------------- |
-| [SDK](https://www.serverless.com/framework/docs/guides/sdk) | 4.3.2  | Inyección Automática de Módulas para Lambdas |
-| [Serverless Framework Core](https://www.serverless.com//blog/serverless-framework-v3-is-live) | 3.23.0 | Core Servicios AWS |
-| [Serverless Plugin](https://www.serverless.com/plugins) | 6.2.2  | Librerías para la Definición Modular |
-| [Systems Manager Parameter Store (SSM)](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) | 3.0 | Manejo de Variables de Entorno |
-| [Amazon Api Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api |
-| [Amazon S3 Bucket](https://aws.amazon.com/es/s3/) | 3.0 | Contenedor de Objetos |
-| [NodeJS](https://nodejs.org/en/) | 14.18.1  | Librería JS |
-| [VSC](https://code.visualstudio.com/docs) | 1.72.2  | IDE |
-| [Postman]((https://www.postman.com/downloads/) | 10.11  | Cliente Http |
-| CMD | 10 | Símbolo del Sistema para linea de comandos | 
-| [Git](https://git-scm.com/downloads) | 2.29.1  | Control de Versiones |
-
-
-<br>
-
-</details>
-
-
-### 1.2) Plugins [🔝](#índice-)
-
-<details>
- <summary></summary>
- 
-| **Plugin** | **Descarga** |               
-| -------------  | ------------- |
-| serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
-| serverless-offline-ssm |  https://www.npmjs.com/package/serverless-offline-ssm |
-| serverless-s3-local |  https://www.serverless.com/plugins/serverless-s3-local |
-
-
-<br>
-
-</details>
-
-
-
-### 1.3) Extensiones VSC [🔝](#índice-)
-
-<details>
- <summary></summary>
-
-| **Extensión** |              
-| -------------  | 
-| Prettier - Code formatter |
-| YAML - Autoformatter .yml (alt+shift+f) |
-| YAML-fm Linter |
-| DotENV |
-
-<br>
-
-</details>
-
-
-
-### 1.4) Ejecución del Proyecto [🔝](#índice-)
-
-<details>
- <summary></summary>
+  <summary>Ver</summary>
 
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs`)
@@ -132,52 +69,87 @@
 </details>
 
 
+### 1.2) Tecnologías [🔝](#índice-)
 
-
-
-
-## Documentación y Guía del Proyecto Inicial/Referencia
-#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
-#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
-
-
-</br>
-
-### Indice.
-
-#### Sección 1) Serverless Local y Api Gateway
-   
-   - [1.0) Instalación y Configuración de Serverless Local](#10-instalación-y-configuración-de-serverless-local)
-  
-   - [2.0) Configuración de Api Gateway](#20-configuración-de-api-gateway)
-   
-   - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
-   
-#### Sección 2) SSM e IAM
-   
-   - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
-
-#### Sección 3) Amazon Bucket S3
-   
-   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
-   
-   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
-   
-   
-  
-
-</br>
-
-## Sección 1) Serverless Local y Api Gateway
-
-
-#### Arquitectura Lambda Function y Api gateway .
- ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/lambdasApiGateway.png)
+<details>
+  <summary>Ver</summary>
  
-</br>
+ <br>
+
+| **Tecnologías** | **Versión** | **Finalidad** |               
+| ------------- | ------------- | ------------- |
+| [SDK](https://www.serverless.com/framework/docs/guides/sdk) | 4.3.2  | Inyección Automática de Módulas para Lambdas |
+| [Serverless Framework Core](https://www.serverless.com//blog/serverless-framework-v3-is-live) | 3.23.0 | Core Servicios AWS |
+| [Serverless Plugin](https://www.serverless.com/plugins) | 6.2.2  | Librerías para la Definición Modular |
+| [Systems Manager Parameter Store (SSM)](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) | 3.0 | Manejo de Variables de Entorno |
+| [Amazon Api Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api |
+| [Amazon S3 Bucket](https://aws.amazon.com/es/s3/) | 3.0 | Contenedor de Objetos |
+| [NodeJS](https://nodejs.org/en/) | 14.18.1  | Librería JS |
+| [VSC](https://code.visualstudio.com/docs) | 1.72.2  | IDE |
+| [Postman](https://www.postman.com/downloads/) | 10.11  | Cliente Http |
+| [CMD](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd) | 10 | Símbolo del Sistema para linea de comandos | 
+| [Git](https://git-scm.com/downloads) | 2.29.1  | Control de Versiones |
 
 
-### 1.0) Instalación y Configuración de Serverless Local
+<br>
+
+</details>
+
+
+### 1.3) Plugins [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+ 
+| **Plugin** | 
+| ------------- |
+| [serverless-offline](https://www.serverless.com/plugins/serverless-offline) |
+| [serverless-offline-ssm](https://www.npmjs.com/package/serverless-offline-ssm) |
+| [serverless-s3-local](https://www.serverless.com/plugins/serverless-s3-local) |
+
+
+<br>
+
+</details>
+
+
+
+### 1.4) Extensiones VSC [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+
+| **Extensión** |              
+| -------------  | 
+| Prettier - Code formatter |
+| YAML - Autoformatter .yml (alt+shift+f) |
+| YAML-fm Linter |
+| DotENV |
+
+<br>
+
+</details>
+
+
+
+<br>
+
+## Sección 2) Creación Proyecto Serverless desde cero
+
+
+#### Arquitectura Lambda Function y Api gateway [🔝](#índice-)
+ ![Index app](./doc/lambdasApiGateway.png)
+ 
+<br>
+
+
+### 2.0) Instalación y Configuración de Serverless Local
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+
 * Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
 * Seguidamente creamos toda la config de serverless para nuestro proyecto(en mi caso el nombre del proyecto es `api-maquinas-industriales` ) `serverless create --template aws-nodejs --path api-maquinas-industriales && cd api-maquinas-industriales`
 * Luego inicializamos el package.json en el proyecto `npm init -y`.
@@ -257,14 +229,65 @@
     ```
    
   
-</br>   
+<br>   
 
 * Guía Oficial : https://www.serverless.com//blog/serverless-framework-v3-is-live   
 * Guía Recomendada : https://medium.com/@patricio.aranguiz/serverless-offline-aws-lambda-api-gateway-15a4dfdfbc16
 * Config Parámetros Provider : https://www.tutorialspoint.com/serverless/serverless_regions_memory_size_timeouts.htm
 
 
+<br>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Documentación y Guía del Proyecto Inicial/Referencia
+#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
+#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
+
+
 </br>
+
+### Indice.
+
+#### Sección 1) Serverless Local y Api Gateway
+   
+   - [1.0) Instalación y Configuración de Serverless Local](#10-instalación-y-configuración-de-serverless-local)
+  
+   - [2.0) Configuración de Api Gateway](#20-configuración-de-api-gateway)
+   
+   - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
+   
+#### Sección 2) SSM e IAM
+   
+   - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
+
+#### Sección 3) Amazon Bucket S3
+   
+   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
+   
+   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
+   
+   
+  
 
 ### 2.0) Configuración de Api Gateway
 * API Gateway gestiona todas las tareas relacionadas con la aceptación y el procesamiento de centenares de miles de llamadas simultáneas a la API. Estas tareas incluyen la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
