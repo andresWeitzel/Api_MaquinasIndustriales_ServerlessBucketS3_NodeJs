@@ -11,6 +11,8 @@ provider:
   timeout: 20
   environment: ${file(serverless.env.yml)}
 
+
+
 plugins:
   - serverless-s3-local
   - serverless-offline-ssm
