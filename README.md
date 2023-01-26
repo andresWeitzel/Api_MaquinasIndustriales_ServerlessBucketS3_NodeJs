@@ -528,9 +528,9 @@
 
 
 
-## 2.3) SSM e IAM [🔝](#índice-)
+### 2.3) SSM e IAM [🔝](#índice-)
 
-### Arquitectura Lambda Function y SSM 
+#### Arquitectura Lambda Function y SSM 
 
 <details>
  <summary>Ver</summary>
@@ -544,7 +544,7 @@
 </details>
 
 
-### 2.3.1) Instalación y Configuración de SSM Local [🔝](#índice-)
+#### 2.3.1) Instalación y Configuración de SSM Local [🔝](#índice-)
 
 
 <details>
