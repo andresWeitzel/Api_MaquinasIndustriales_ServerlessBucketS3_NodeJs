@@ -19,7 +19,7 @@
  - [1.3) Plugins.](#13-plugins-)
  - [1.4) Extensiones VSC.](#14-extensiones-vsc-)
  
-### Sección 2) Creación Proyecto Serverless desde cero 
+### Sección 2) Proyecto Serverless desde cero 
  
  - [2.0) Instalación y Configuración de Serverless Local](#20-instalación-y-configuración-de-serverless-local-)
 
@@ -134,16 +134,16 @@
 
 <br>
 
-## Sección 2) Creación Proyecto Serverless desde cero
+## Sección 2) Proyecto Serverless desde cero
 
 
-#### Arquitectura Lambda Function y Api gateway [🔝](#índice-)
+### Arquitectura Lambda Function y Api gateway 
  ![Index app](./doc/lambdasApiGateway.png)
  
 <br>
 
 
-### 2.0) Instalación y Configuración de Serverless Local
+### 2.0) Instalación y Configuración de Serverless Local [🔝](#índice-)
 
 <details>
  <summary>Ver</summary>
