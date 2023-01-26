@@ -4,6 +4,19 @@
 
 </br>
 
+### Ejecución del Proyecto
+* Crear un entorno de trabajo a través de algún IDE
+* Clonar el Proyecto (`git clone https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs`)
+* Dentro del directorio instalar todos los plugins implementados
+  * `npm install -g serverless`
+  * `npm i serverless-offline`
+  * `npm install serverless-offline serverless-offline-ssm --save-dev`
+  * `npm install serverless-s3-local --save-dev`
+* Levantar Serverless en Local (`sls offline start`)
+* Comprobar respuestas de los endpoints generados a través de alguna herramienta Cliente Http (Ej:Postman)
+
+</br>
+
 
 
 
@@ -19,6 +32,7 @@
 | Amazon S3 Bucket | 3.0 | Contenedor de Objetos |
 | NodeJS | 14.18.1  | Librería JS |
 | VSC | 1.72.2  | IDE |
+| Postman| 10.11  | Cliente Http |
 | CMD | 10 | Símbolo del Sistema para linea de comandos | 
 | Git | 2.29.1  | Control de Versiones |
 
@@ -36,6 +50,7 @@
 | Systems Manager Parameter Store (SSM) | https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html |
 | NodeJs |  https://nodejs.org/en/ |
 | VSC |  https://code.visualstudio.com/docs |
+| Postman |  https://learning.postman.com/docs/publishing-your-api/documenting-your-api/ |
 | Git   |  https://git-scm.com/docs |
 
 </br>
@@ -57,6 +72,7 @@
 | -------------  | 
 | Prettier - Code formatter |
 | YAML - Autoformatter .yml (alt+shift+f) |
+| YAML-fm Linter |
 | DotENV |
 
 
@@ -64,8 +80,10 @@
 
 <hr>
 
-## Documentación y Guía del Proyecto
-#### (Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma).
+## Documentación y Guía del Proyecto Inicial/Referencia
+#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
+#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
+
 
 </br>
 
@@ -86,6 +104,8 @@
 #### Sección 3) Amazon Bucket S3
    
    - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
+   
+   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
    
    
   
@@ -595,14 +615,25 @@
   ```
 * Ejecutar serverless, es recomendable luego de cada instalación y agregado de plugin reiniciar el IDE para que los cambios se produzcan de forma correcta.
 * Seguidamente vamos a declarar una lambda de tipo bucket que nos gestione toda la metadata para las acciones que se realice en tiempo de ejecución.
-* Definimos dicha lambda en el archivo `serverless.yml`
+* Definimos el path de dicha lambda en el archivo `serverless.yml`
 
   ``` YML
+  functions:
      bucketS3:
-       handler : src/bucketS3.config
+       handler : src/lambdas/bucketS3.config
        events:
          - s3: local-bucket
            event: s3:*
+  ```
+* Definimos la configuración y nombre de dicho bucket 
+
+  ``` YML
+      resources:
+        Resources:
+          Bucket:
+            Type: AWS::S3::Bucket
+            Properties:
+              BucketName: FILE_UPLOAD_BUCKET
   ```
 
 * Creamos dicha lambda `bucketS3.js` dentro de `src/lambdas/`
@@ -617,6 +648,77 @@
      //=================== FIN METADATA BUCKET =================
    
    ```
+* Ejecutamos serverless y verificamos que no surjan errores.   
+   
+</br>
+
+
+### 6.0) Escritura de Objetos
+* Los objetos son las entidades de datos en sí, es decir, nuestros archivos. Un object almacena tanto los datos como los metadatos necesarios para S3. 
+* Para este ejemplo vamos a modulizar código y abstraernos de las lambdas con respecto a las operaciones de escritura y lectura para el bucket, por ende crearemos funciones que realicen esto.
+* Creamos un nuevo directorio `src/utils/bucket`.
+* Dentro del mismo el archivo `appendBucket.js`
+* Crearemos una función que espere como parámetro el tipo de objeto a almacenar y toda la lógica del bucket dentro de esta.
+* Para utilizar la funcionalidad de los buckets es necesario importar el skd de aws, de esta forma podremos instanciar un objeto del tipo S3Client. Para este objeto se le podrán pasar las credenciales necesarias para trabajar en local (S3ERVER) y declarar otros params 
+* Seguidamente utilizaremos el método send para indicar el nombre del bucket (`Bucket`) y su llave (`key`). Además de indicarle el objeto a almacenar (`Body`).
+
+   ``` js
+     //Imports
+     "use strict";
+     const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+
+
+     //======= APPEND BUCKET ===========
+     async function put(appendData) {
+       try {
+
+
+         const client = new S3Client({
+           forcePathStyle: true,
+           credentials: {
+             accessKeyId: "S3RVER", // This specific key is required when working offline
+             secretAccessKey: "S3RVER",
+           },
+           endpoint: "http://localhost:4569",
+         });
+
+         client.send(
+           new PutObjectCommand({
+             Bucket: "local-bucket",
+             Key: "bucketS3.json",
+             Body: await appendData,
+           })
+         );
+       } catch (error) {
+         console.log(error);
+       }
+     }
+     //======= END APPEND ===========
+
+     module.exports = { put };  
+   
+   ```
+
+* Seguidamente configuramos una lambda, es necesario su definición en el serverless.yml
+
+   ``` yml
+    functions:
+      createMachine:
+        handler: src/lambdas/createMachine.post
+        description: STORING INDUSTRIAL MACHINES IN BUCKET S3.
+        events:
+          - httpApi:
+              method: POST
+              path: /dev/machine/
+              private: true
+   ```
+   
+* Crearemos la lambda configurada dentro de `src/lambdas/` para que ejecute dicho proceso de escritura del bucket.  
+
+
+
+
+
 
 
 </br>
