@@ -2,9 +2,120 @@
 * Microservicio Api Rest para la Gestión de Máquinas Industriales implementando Serverless, Api Gateway, SSM, Bucket S3, NodeJs y Otras Tecnologías.
 
 
-</br>
+<br>
 
-### Ejecución del Proyecto
+## Índice 📜
+
+<details>
+ <summary> Ver </summary>
+ 
+ <br>
+ 
+### Sección 1) Descripción, Tecnologías y Dependencias 
+ 
+ - [1.0) Descripción del Proyecto.](#10-descripción-)
+ - [1.1) Tecnologías.](#11-tecnologías-)
+ - [1.2) Plugins.](#12-plugins-)
+ - [1.3) Extensiones VSC.](#13-extensiones-vsc-)
+ - [1.4) Ejecución del Proyecto.](#14-ejecución-del-proyecto-)
+ 
+### Sección 2) s 
+ 
+ - [2.0) EndPoints.](#endpoints-)
+ - [2.1) Recursos y Servicios.](#recursos-y-servicios-)
+
+<br>
+
+</details>
+
+
+<br>
+
+## Sección 1) Descripción, Tecnologías y Dependencias 
+
+
+### 1.0) Descripción [🔝](#índice-) 
+
+<details>
+ <summary></summary>
+ 
+ <br>
+
+* ipsum
+
+<br>
+
+</details>
+
+
+### 1.1) Tecnologías [🔝](#índice-)
+
+<details>
+ <summary></summary>
+ 
+ <br>
+
+| **Tecnologías** | **Versión** | **Finalidad** |               
+| ------------- | ------------- | ------------- |
+| [SDK](https://www.serverless.com/framework/docs/guides/sdk) | 4.3.2  | Inyección Automática de Módulas para Lambdas |
+| [Serverless Framework Core](https://www.serverless.com//blog/serverless-framework-v3-is-live) | 3.23.0 | Core Servicios AWS |
+| [Serverless Plugin](https://www.serverless.com/plugins) | 6.2.2  | Librerías para la Definición Modular |
+| [Systems Manager Parameter Store (SSM)](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) | 3.0 | Manejo de Variables de Entorno |
+| [Amazon Api Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api |
+| [Amazon S3 Bucket](https://aws.amazon.com/es/s3/) | 3.0 | Contenedor de Objetos |
+| [NodeJS](https://nodejs.org/en/) | 14.18.1  | Librería JS |
+| [VSC](https://code.visualstudio.com/docs) | 1.72.2  | IDE |
+| [Postman]((https://www.postman.com/downloads/) | 10.11  | Cliente Http |
+| CMD | 10 | Símbolo del Sistema para linea de comandos | 
+| [Git](https://git-scm.com/downloads) | 2.29.1  | Control de Versiones |
+
+
+<br>
+
+</details>
+
+
+### 1.2) Plugins [🔝](#índice-)
+
+<details>
+ <summary></summary>
+ 
+| **Plugin** | **Descarga** |               
+| -------------  | ------------- |
+| serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
+| serverless-offline-ssm |  https://www.npmjs.com/package/serverless-offline-ssm |
+| serverless-s3-local |  https://www.serverless.com/plugins/serverless-s3-local |
+
+
+<br>
+
+</details>
+
+
+
+### 1.3) Extensiones VSC [🔝](#índice-)
+
+<details>
+ <summary></summary>
+
+| **Extensión** |              
+| -------------  | 
+| Prettier - Code formatter |
+| YAML - Autoformatter .yml (alt+shift+f) |
+| YAML-fm Linter |
+| DotENV |
+
+<br>
+
+</details>
+
+
+
+### 1.4) Ejecución del Proyecto [🔝](#índice-)
+
+<details>
+ <summary></summary>
+
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs`)
 * Dentro del directorio instalar todos los plugins implementados
@@ -15,70 +126,15 @@
 * Levantar Serverless en Local (`sls offline start`)
 * Comprobar respuestas de los endpoints generados a través de alguna herramienta Cliente Http (Ej:Postman)
 
-</br>
+
+<br>
+
+</details>
 
 
 
 
-### Tecnologías Implementadas
 
-| **Tecnologías** | **Versión** | **Finalidad** |               
-| ------------- | ------------- | ------------- |
-| SDK | 4.3.2  | Inyección Automática de Módulas para Lambdas |
-| Serverless Framework Core | 3.23.0 | Core Servicios AWS |
-| Serverless Plugin | 6.2.2  | Librerías para la Definición Modular |
-| Systems Manager Parameter Store (SSM) | 3.0 | Manejo de Variables de Entorno |
-| Amazon Api Gateway | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api |
-| Amazon S3 Bucket | 3.0 | Contenedor de Objetos |
-| NodeJS | 14.18.1  | Librería JS |
-| VSC | 1.72.2  | IDE |
-| Postman| 10.11  | Cliente Http |
-| CMD | 10 | Símbolo del Sistema para linea de comandos | 
-| Git | 2.29.1  | Control de Versiones |
-
-
-
-</br>
-
-### Documentación Oficial de las Tecnologías Implementadas.
-
-| **Tecnología** | **Documentación** |               
-| -------------  | ------------- |
-| Serverless Framework V3 |  https://www.serverless.com//blog/serverless-framework-v3-is-live |
-| Amazon Api Gateway |  https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
-| Amazon Bucket S3 | https://aws.amazon.com/es/s3/ |
-| Systems Manager Parameter Store (SSM) | https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html |
-| NodeJs |  https://nodejs.org/en/ |
-| VSC |  https://code.visualstudio.com/docs |
-| Postman |  https://learning.postman.com/docs/publishing-your-api/documenting-your-api/ |
-| Git   |  https://git-scm.com/docs |
-
-</br>
-
-### Plugins Implementados.
-
-| **Plugin** | **Descarga** |               
-| -------------  | ------------- |
-| serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
-| serverless-offline-ssm |  https://www.npmjs.com/package/serverless-offline-ssm |
-| serverless-s3-local |  https://www.serverless.com/plugins/serverless-s3-local |
-
-
-</br>
-
-### Extensiones VSC Implementados.
-
-| **Extensión** |              
-| -------------  | 
-| Prettier - Code formatter |
-| YAML - Autoformatter .yml (alt+shift+f) |
-| YAML-fm Linter |
-| DotENV |
-
-
-</br>
-
-<hr>
 
 ## Documentación y Guía del Proyecto Inicial/Referencia
 #### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
