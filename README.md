@@ -22,7 +22,13 @@
 ### Sección 2) Proyecto Serverless desde cero 
  
  - [2.0) Instalación y Configuración de Serverless Local](#20-instalación-y-configuración-de-serverless-local-)
- - [2.1) Configuración de Api Gateway](#21-configuración-de-api-gateway-)
+ - [2.1) Configuración de Api Gateway](#21-configuración-de-api-gateway-) 
+ - [2.2) Ejecución de Serverless Local](#22-ejecución-de-serverless-local-)
+ - [2.3) SSM y IAM](#23-ssm-y-iam-)
+      - [2.3.1) Instalación y Configuración de SSM Local](#231-instalación-y-configuración-de-ssm-local-)
+ 
+
+
 
 
 <br>
@@ -55,7 +61,7 @@
   <summary>Ver</summary>
 
 * Crear un entorno de trabajo a través de algún IDE
-* Clonar el Proyecto (`git clone https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs`)
+* Clonar el Proyecto ( `git clone https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs` )
 * Dentro del directorio instalar todos los plugins implementados
   * `npm install -g serverless`
   * `npm i serverless-offline`
@@ -477,56 +483,13 @@
 
 
 
+### 2.2) Ejecución de Serverless Local [🔝](#índice-)
 
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Documentación y Guía del Proyecto Inicial/Referencia
-#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
-#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
-
-
-</br>
-
-### Indice.
-
-#### Sección 1) Serverless Local y Api Gateway
-   
-
-  
-   
-   - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
-   
-#### Sección 2) SSM e IAM
-   
-   - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
-
-#### Sección 3) Amazon Bucket S3
-   
-   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
-   
-   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
-   
-   
-  
-
-</br>
-
-### 3.0) Ejecución de Serverless Local
 * Por defecto tenemos configurado una lambda llamada hello a través de su función .msg
 * Comprobamos la config generada.
 * Además tenemos configurada la seguridad y manejo de responses por parte de la Api Gateway, esta nos provera un token de acceso (x-api-key) para el acceso a cada lambda.
@@ -556,22 +519,37 @@
     GET /hello (λ: hello)
    (λ: hello) RequestId: 63fc1719-ae56-4d56-8296-87d45b44fc96  Duration: 124.64 ms  Billed Duration: 125 ms
   ```
-  
-  
-  
-  
-</br>
 
-## Sección 2) SSM e IAM 
+<br>
+
+</details>
 
 
-#### Arquitectura Lambda Function y SSM .
- ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/ssmLambdas.png)
 
-</br>
+## 2.3) SSM e IAM [🔝](#índice-)
+
+### Arquitectura Lambda Function y SSM 
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+
+ ![Index app](./doc/ssmLambdas.png)
+
+<br>
+
+</details>
 
 
-### 4.0) Instalación y Configuración de SSM Local
+### 2.3.1) Instalación y Configuración de SSM Local [🔝](#índice-)
+
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+ 
 * Instalamos el plugin `npm install serverless-offline serverless-offline-ssm --save-dev`
 * Agregamos el complemento dentro del serverless.yml. Es importante mantener el orden siguiente (serverless-offline siempre último por temas de compatibilidad).
    
@@ -687,7 +665,49 @@
       }
     ```
 
+<br>
+
+</details>
+
+
+
+
+<br>
+
+<br>
+
+<br>
+
+
+
+
+
+
+### SIGUIENTE SECCIÓN EN PROCESO DE ACTUALIZACIÓN
+
+<details>
+ <summary>Ver</summary>
+ 
+## Documentación y Guía del Proyecto Inicial/Referencia
+#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
+#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
+
+
 </br>
+
+### Indice.
+
+#### Sección 3) Amazon Bucket S3
+   
+   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
+   
+   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
+   
+   
+  
+
+</br>
+
 
 ## Sección 3) Amazon Bucket S3
 
@@ -816,15 +836,8 @@
 
 
 
+<br>
 
+</details>
 
-
-</br>
-
-
-<hr>
-
-
-
-## `DOCUMENTACIÓN EN PROCESO DE DESARROLLO`
 
