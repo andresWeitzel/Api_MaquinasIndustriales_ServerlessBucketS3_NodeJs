@@ -148,11 +148,13 @@
 <details>
   <summary>Ver</summary>
  
+ 
  <br>
  
- ![Index app](./doc/lambdasApiGateway.png)
- 
+<img src="./doc/lambdasApiGateway.png" style="width: 70%; height: 70%"/>
+
 <br>
+ 
 
 </details>
 
@@ -533,9 +535,9 @@
 <details>
  <summary>Ver</summary>
  
- <br>
-
- ![Index app](./doc/ssmLambdas.png)
+<br>
+ 
+<img src="./doc/ssmLambdas.png" style="width: 70%; height: 70%"/>
 
 <br>
 
