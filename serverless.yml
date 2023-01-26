@@ -21,18 +21,13 @@ custom:
     stages:
       - offline
     ssm:
-      '/hello_test': 'HELLO SSM'
+      "/hello_test": "HELLO SSM"
   serverless-offline:
-      httpPort: 4000
+    httpPort: 4000
 
-      
 functions:
   bucketS3:
-<<<<<<< HEAD
-    handler : src/lambdas/bucketS3.config
-=======
-    handler : src/bucketS3.config
->>>>>>> d71e4492c539fc24fa01a979215a213d9af37c2d
+    handler: src/lambdas/bucketS3.config
     events:
       - s3: local-bucket
         event: s3:*
@@ -43,31 +38,13 @@ functions:
           method: GET
           path: hello
           private: true
-<<<<<<< HEAD
-
-=======
-  createMachine:
-    handler: src/lambdas/createMachine.post
-    description: STORING INDUSTRIAL MACHINES IN BUCKET S3.
-    events:
-      - httpApi:
-          method: POST
-          path: /dev/machine/
-          private: true
->>>>>>> d71e4492c539fc24fa01a979215a213d9af37c2d
 
 resources:
   Resources:
     Bucket:
-<<<<<<< HEAD
       Type: AWS::S3::Bucket
       Properties:
         BucketName: FILE_UPLOAD_BUCKET
-=======
-        Type: AWS::S3::Bucket
-        Properties:
-          BucketName: FILE_UPLOAD_BUCKET
->>>>>>> d71e4492c539fc24fa01a979215a213d9af37c2d
     ApiGatewayRestApi:
       Type: AWS::ApiGateway::RestApi
       Properties:
