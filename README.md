@@ -27,6 +27,9 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
  - [2.3) SSM y IAM](#23-ssm-y-iam-)
       - [2.3.1) Instalación y Configuración de SSM Local](#231-instalación-y-configuración-de-ssm-local-)
  
+### Sección 3) Amazon Bucket S3
+ 
+ - [3.0) Instalación y Configuración de Amazon Bucket S3](#30-instalación-y-configuración-de-amazon-bucket-s3-)
 
 
 
@@ -672,57 +675,33 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 </details>
 
 
-
-
 <br>
 
-<br>
-
-<br>
-
-
-
-
-
-
-### SIGUIENTE SECCIÓN EN PROCESO DE ACTUALIZACIÓN
+## Sección 3) Amazon Bucket S3
 
 <details>
  <summary>Ver</summary>
  
-## Documentación y Guía del Proyecto Inicial/Referencia
-#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
-#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
-
-
-</br>
-
-### Indice.
-
-#### Sección 3) Amazon Bucket S3
-   
-   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
-   
-   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
-   
-   
-  
-
-</br>
-
-
-## Sección 3) Amazon Bucket S3
-
+ <br>
 
 #### Arquitectura Lambda Function, Api gateway y Bucket S3.
- ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/bucketLambdas.jpeg)
+ <img src="./doc/bucketLambdas.jpeg" style="width: 70%; height: 70%"/>
 #### Registro de Objectos Json Bucket S3.
- ![Index app](https://github.com/andresWeitzel/Api_MaquinasIndustriales_ServerlessBucketS3_NodeJs/blob/master/doc/bucketObject.png) 
+ <img src="./doc/bucketObject.png" style="width: 70%; height: 70%"/>
+
+ <br>
+
+</details>
+
+
+
+### 3.0) Instalación y Configuración de Amazon Bucket S3 [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
  
-</br>
-
-
-### 5.0) Instalación y Configuración de Amazon Bucket S3
+ <br>
+  
 * Amazon Simple Storage Service (Amazon S3) es un servicio de almacenamiento de objetos que ofrece escalabilidad, disponibilidad de datos, seguridad y rendimiento líderes en el sector. 
 * Vamos a instalar el plugin en local `npm install serverless-s3-local --save-dev`
 * Agregamos el mismo en la sección plugin del .yml, quedando...
@@ -770,7 +749,55 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
    ```
 * Ejecutamos serverless y verificamos que no surjan errores.   
    
+
+ <br>
+
+</details>
+
+
+
+
+
+
+
+<br>
+
+<br>
+
+<br>
+
+
+
+
+
+
+### SIGUIENTE SECCIÓN EN PROCESO DE ACTUALIZACIÓN
+
+<details>
+ <summary>Ver</summary>
+ 
+## Documentación y Guía del Proyecto Inicial/Referencia
+#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
+#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
+
+
 </br>
+
+### Indice.
+
+#### Sección 3) Amazon Bucket S3
+   
+   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
+   
+   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
+   
+   
+  
+
+</br>
+
+
+## Sección 3) Amazon Bucket S3
 
 
 ### 6.0) Escritura de Objetos
