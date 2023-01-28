@@ -684,7 +684,7 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 
 
 
-### 3.0) Arquitectura Lambda Function, Api gateway y Bucket S3 [🔝](#índice-)3.1) Registro de Objectos Json Bucket S3 [🔝](#índice-)
+### 3.0) Arquitectura Lambda Function, Api gateway y Bucket S3 [🔝](#índice-)
 
 <details>
  <summary>Ver</summary>
