@@ -25,16 +25,16 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
  - [2.1) Configuración de Api Gateway](#21-configuración-de-api-gateway-) 
  - [2.2) Ejecución de Serverless Local](#22-ejecución-de-serverless-local-)
  - [2.3) SSM y IAM](#23-ssm-y-iam-)
+      - [2.3.0) Arquitectura Lambda Function y SSM](#230-arquitectura-lambda-function-y-ssm)
       - [2.3.1) Instalación y Configuración de SSM Local](#231-instalación-y-configuración-de-ssm-local-)
  
 ### Sección 3) Amazon Bucket S3
  
- - [3.0) Instalación y Configuración de Amazon Bucket S3](#30-instalación-y-configuración-de-amazon-bucket-s3-)
- - [3.1) Escritura de objetos ](#31-escritura-de-objetos)
+ - [3.0) Arquitectura Lambda Function, Api gateway y Bucket S3](#30-arquitectura-lambda-function-api-gateway-y-bucket-s3-)
+ - [3.1) Registro de Objectos Json Bucket S3](#31-registro-de-objectos-json-bucket-s3-)
+ - [3.2) Instalación y Configuración de Amazon Bucket S3](#32-instalación-y-configuración-de-amazon-bucket-s3-)
+ - [3.3) Escritura de objetos ](#33-escritura-de-objetos)
    
-
-
-
 
 
 <br>
@@ -536,7 +536,7 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 
 ### 2.3) SSM e IAM [🔝](#índice-)
 
-### Arquitectura Lambda Function y SSM 
+### 2.3.0) Arquitectura Lambda Function y SSM 
 
 <details>
  <summary>Ver</summary>
@@ -684,7 +684,7 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 
 
 
-#### Arquitectura Lambda Function, Api gateway y Bucket S3.
+### 3.0) Arquitectura Lambda Function, Api gateway y Bucket S3 [🔝](#índice-)3.1) Registro de Objectos Json Bucket S3 [🔝](#índice-)
 
 <details>
  <summary>Ver</summary>
@@ -699,7 +699,7 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
  
  
  
-#### Registro de Objectos Json Bucket S3.
+### 3.1) Registro de Objectos Json Bucket S3 [🔝](#índice-)
  
 <details>
  <summary>Ver</summary>
@@ -715,7 +715,7 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 
 
 
-### 3.0) Instalación y Configuración de Amazon Bucket S3 [🔝](#índice-)
+### 3.2) Instalación y Configuración de Amazon Bucket S3 [🔝](#índice-)
 
 <details>
  <summary>Ver</summary>
@@ -776,7 +776,7 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 
 
 
-### 3.1) Escritura de Objetos
+### 3.3) Escritura de Objetos [🔝](#índice-)
 
 <details>
  <summary>Ver</summary>
