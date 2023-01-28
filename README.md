@@ -30,6 +30,9 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 ### Sección 3) Amazon Bucket S3
  
  - [3.0) Instalación y Configuración de Amazon Bucket S3](#30-instalación-y-configuración-de-amazon-bucket-s3-)
+ - [3.1) Escritura de objetos ](#31-escritura-de-objetos)
+   
+
 
 
 
@@ -679,19 +682,36 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 
 ## Sección 3) Amazon Bucket S3
 
+
+
+#### Arquitectura Lambda Function, Api gateway y Bucket S3.
+
 <details>
  <summary>Ver</summary>
  
  <br>
-
-#### Arquitectura Lambda Function, Api gateway y Bucket S3.
+ 
  <img src="./doc/bucketLambdas.jpeg" style="width: 70%; height: 70%"/>
-#### Registro de Objectos Json Bucket S3.
- <img src="./doc/bucketObject.png" style="width: 70%; height: 70%"/>
-
+ 
  <br>
 
 </details>
+ 
+ 
+ 
+#### Registro de Objectos Json Bucket S3.
+ 
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+  
+ <img src="./doc/bucketObject.png" style="width: 70%; height: 70%"/>
+ 
+ <br>
+
+</details>
+ 
 
 
 
@@ -756,51 +776,13 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 
 
 
-
-
-
-
-<br>
-
-<br>
-
-<br>
-
-
-
-
-
-
-### SIGUIENTE SECCIÓN EN PROCESO DE ACTUALIZACIÓN
+### 3.1) Escritura de Objetos
 
 <details>
  <summary>Ver</summary>
  
-## Documentación y Guía del Proyecto Inicial/Referencia
-#### Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma.
-#### Como se ha mencionado es una guía inicial y de referencia. Esto quiere decir que el código documentado no será el mismo que el del repositorio. La guía nos indica los pasos que debemos seguir para comprender, configurar y generar cada servicio de aws. Recomiendo tener en consideración dicho proceso.
-
-
-</br>
-
-### Indice.
-
-#### Sección 3) Amazon Bucket S3
-   
-   - [5.0) Instalación y Configuración de Amazon Bucket S3 ](#50-instalación-y-configuración-de-amazon-bucket-s3)
-   
-   - [6.0) Escritura de objetos ](#60-escritura-de-objetos)
-   
-   
-  
-
-</br>
-
-
-## Sección 3) Amazon Bucket S3
-
-
-### 6.0) Escritura de Objetos
+ <br>
+ 
 * Los objetos son las entidades de datos en sí, es decir, nuestros archivos. Un object almacena tanto los datos como los metadatos necesarios para S3. 
 * Para este ejemplo vamos a modulizar código y abstraernos de las lambdas con respecto a las operaciones de escritura y lectura para el bucket, por ende crearemos funciones que realicen esto.
 * Creamos un nuevo directorio `src/utils/bucket`.
@@ -863,10 +845,17 @@ Microservicio Api Rest para la Gestión de Máquinas Industriales implementando 
 * Crearemos la lambda configurada dentro de `src/lambdas/` para que ejecute dicho proceso de escritura del bucket.  
 
 
-
-
-<br>
+ <br>
 
 </details>
+
+
+
+
+
+
+
+
+
 
 
